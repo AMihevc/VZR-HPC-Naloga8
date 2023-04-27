@@ -13,13 +13,13 @@ int main(int argc, char* argv[])
     
     srand(SEED);
     double start=omp_get_wtime();
-    for (int i = 0; i < SAMPLES; i++)
+    for (int i = 0; i < SAMPLES; i++) // pri tem more sodelovat več processov ki si potem delijo count in na koncu en izračuna pi
     {
         x = (double)random() / (double)RAND_MAX;
         y = (double)random() / (double)RAND_MAX;
         z = sqrt((x*x) + (y*y));
         
-        if (z <= 1.0)
+        if (z <= 1.0) // preveri če je razdalja do izhodišča večja ali manjša od 1
         {
             count++;
         }
